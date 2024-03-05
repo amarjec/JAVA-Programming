@@ -46,6 +46,31 @@ public class Sorting {
             arr[j+1] = curr;
         }
     }
+    public static void counting_sort (int arr[] ) {
+
+        // counting sort
+        int max = Integer.MIN_VALUE;
+        //to find range of arr
+        for (int i=0; i< arr.length; i++) {
+            max = Math.max(max,arr[i]);
+        }
+
+        // fto find frequency of element in a range
+        int freq [] = new int[max+1]; // because range come from max function not include 0
+        for (int i=0; i<arr.length; i++) {
+            freq[arr[i]]++;
+        }
+
+        // now sorting
+        int j=0;
+        for (int i=0; i< freq.length; i++) {
+            while (freq[i]>0) {
+                arr[j] = i;
+                j++;
+                freq[i]--;
+            }
+        }
+    }
 
 
 
@@ -76,6 +101,11 @@ public class Sorting {
         }
         insertion_sort(arr);
         System.out.print("\nInsertion sort : ");
+        for (int i=0; i<arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        counting_sort(arr);
+        System.out.print("\nCounting sort : ");
         for (int i=0; i<arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
