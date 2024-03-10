@@ -1,0 +1,33 @@
+package OOPS;
+
+public class Constructer {
+
+    public static class Student {
+        String name;
+        int std;
+        double prcnt;
+
+        // Constructer
+        public Student() {
+            
+        }
+        public Student(String name, int std, double prcnt) {
+            this.name = name;
+            this.std = std;
+            this.prcnt = prcnt;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student("Amar Agrawal", 12, 89.6);
+
+        System.out.println(s1.name);
+        System.out.println(s1.std);
+        System.out.println(s1.prcnt);
+        
+        
+        Student s2 = new Student();
+        s2.name = "";
+    }
+}
